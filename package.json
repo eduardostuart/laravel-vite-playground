@@ -5,7 +5,9 @@
         "prod": "vite build",
         "production": "npm run prod"
     },
-    "devDependencies": {},
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^1.1.5"
+    },
     "dependencies": {
         "vite": "^2.1.2"
     }
