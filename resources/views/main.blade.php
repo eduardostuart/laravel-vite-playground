@@ -7,19 +7,19 @@
     <title>Main</title>
 </head>
 <body>
-    <div class="main">
-        <div class="main__warning">this is fast</div>
+    <div id="app">
     </div>
     
     @production
         @php
             $manifest = json_decode(file_get_contents(public_path('build/manifest.json')), true);
+            print_r($manifest);
         @endphp
-        <script type="module" src="/build/{{ $manifest['resources/js/app.js']['file'] }}"></script>
-        <link rel="stylesheet" href="/build/{{ $manifest['resources/js/app.js']['css'][0] }}">
+        <script type="module" src="/build/{{ $manifest['resources/js/main.js']['file'] }}"></script>
+        <link rel="stylesheet" href="/build/{{ $manifest['resources/js/main.js']['css'][0] }}">
     @else
         <script type="module" src="http://localhost:3000/@vite/client"></script>
-        <script type="module" src="http://localhost:3000/resources/js/app.js"></script>
+        <script type="module" src="http://localhost:3000/resources/js/main.ts"></script>
     @endproduction
 </body>
 </html>
